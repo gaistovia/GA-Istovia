@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1fa970"/>
+      <stop offset="100%" stop-color="#0b3c2d"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4be3a5"/>
+      <stop offset="100%" stop-color="#1fa970"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="44" fill="url(#g1)"/>
+  <rect x="10" y="10" width="180" height="180" rx="36" fill="none" stroke="#4be3a5" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="100" y="128" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-weight="700" fill="url(#g2)" text-anchor="middle">GA</text>
+</svg>
