@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quotation {{PROJECT_ID}} — GA Istovia</title>
+<style>
+  /* Self-contained print template — does not depend on the main site
+     stylesheet, since this is meant to be rendered standalone (browser
+     print-to-PDF today, or Apps Script HTML→PDF conversion in Phase 3). */
+  @page{ size:A4; margin:22mm 18mm; }
+  *{box-sizing:border-box;}
+  body{font-family:'Helvetica Neue',Arial,sans-serif;color:#14211b;background:#fff;margin:0;font-size:13px;line-height:1.6;}
+  .doc{max-width:800px;margin:0 auto;padding:40px;}
+  .doc-head{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #159267;padding-bottom:24px;margin-bottom:32px;}
+  .doc-brand{display:flex;align-items:center;gap:12px;}
+  .doc-brand .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,#1fa970,#0b3c2d);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;font-family:Georgia,serif;}
+  .doc-brand h1{font-size:20px;margin:0;letter-spacing:1px;}
+  .doc-brand span{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#666;margin-top:2px;}
+  .doc-meta{text-align:right;font-size:12px;color:#444;}
+  .doc-meta b{display:block;font-size:22px;color:#0b3c2d;letter-spacing:1px;margin-bottom:4px;}
+  .two-col{display:flex;justify-content:space-between;gap:30px;margin-bottom:30px;}
+  .two-col div{flex:1;}
+  .label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:6px;font-weight:700;}
+  .value{font-size:13px;color:#14211b;}
+  table{width:100%;border-collapse:collapse;margin:26px 0;}
+  th{background:#0b3c2d;color:#fff;text-align:left;padding:10px 12px;font-size:11px;letter-spacing:.5px;text-transform:uppercase;}
+  td{padding:10px 12px;border-bottom:1px solid #e5e5e5;font-size:13px;}
+  tfoot td{border-bottom:none;border-top:2px solid #0b3c2d;font-weight:700;font-size:14px;}
+  .terms{margin-top:30px;font-size:11.5px;color:#555;background:#f6f6f2;padding:18px 20px;border-radius:8px;}
+  .terms h4{margin:0 0 10px;font-size:12px;color:#14211b;}
+  .terms ul{margin:0;padding-left:18px;}
+  .terms li{margin-bottom:6px;}
+  .accept{display:flex;gap:40px;margin-top:44px;}
+  .accept div{flex:1;border-top:1px solid #999;padding-top:8px;font-size:11px;color:#666;}
+  .footer-note{margin-top:40px;text-align:center;font-size:10.5px;color:#999;}
+  .status-pill{display:inline-block;padding:3px 10px;border-radius:20px;background:#eef7f1;color:#0e8a5a;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+  @media print{ .no-print{display:none;} }
+</style>
+</head>
+<body>
+<div class="doc">
+
+  <div class="doc-head">
+    <div class="doc-brand">
+      <div class="mark">GA</div>
+      <div>
+        <h1>GA ISTOVIA</h1>
+        <span>Premium Digital Studio</span>
+      </div>
+    </div>
+    <div class="doc-meta">
+      <b>QUOTATION</b>
+      No. {{QUOTATION_NUMBER}}<br>
+      Project ID: {{PROJECT_ID}}<br>
+      Date: {{ISSUE_DATE}}<br>
+      Valid until: {{VALID_UNTIL}}
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="label">Prepared For</div>
+      <div class="value">
+        {{CLIENT_NAME}}<br>
+        {{COMPANY_NAME}}<br>
+        {{CLIENT_EMAIL}}<br>
+        {{CLIENT_PHONE}}
+      </div>
+    </div>
+    <div>
+      <div class="label">Prepared By</div>
+      <div class="value">
+        GA Istovia<br>
+        Sales &amp; Marketing: +255 625 794 188<br>
+        Technical Support: +255 797 701 372<br>
+        gaistovia@gmail.com
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Service</th><th>Description</th><th style="text-align:right;">Amount (TZS)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>{{SERVICE_1_NAME}}</td><td>{{SERVICE_1_DESC}}</td><td style="text-align:right;">{{SERVICE_1_AMOUNT}}</td></tr>
+      <tr><td>{{SERVICE_2_NAME}}</td><td>{{SERVICE_2_DESC}}</td><td style="text-align:right;">{{SERVICE_2_AMOUNT}}</td></tr>
+      <!-- Apps Script: repeat <tr> per line item -->
+    </tbody>
+    <tfoot>
+      <tr><td colspan="2">Subtotal</td><td style="text-align:right;">{{SUBTOTAL}}</td></tr>
+      <tr><td colspan="2">Discount</td><td style="text-align:right;">{{DISCOUNT}}</td></tr>
+      <tr><td colspan="2">Total</td><td style="text-align:right;">{{TOTAL}}</td></tr>
+    </tfoot>
+  </table>
+
+  <div class="terms">
+    <h4>Terms &amp; Payment</h4>
+    <ul>
+      <li>Deposit: 50% before work begins, 50% on delivery.</li>
+      <li>Estimated delivery: {{TIMELINE}}.</li>
+      <li>This quotation is valid until {{VALID_UNTIL}}; prices may change after this date.</li>
+      <li>Scope changes after acceptance may require a revised quotation.</li>
+      <li>Payment via mobile money, bank transfer, or as agreed with our Sales team.</li>
+    </ul>
+  </div>
+
+  <div class="accept">
+    <div>Client Signature &amp; Date</div>
+    <div>GA Istovia Representative &amp; Date</div>
+  </div>
+
+  <p class="footer-note">Status: <span class="status-pill">{{QUOTATION_STATUS}}</span> &nbsp;·&nbsp; GA Istovia — East Africa &nbsp;·&nbsp; gaistovia@gmail.com</p>
+
+</div>
+</body>
+</html>
