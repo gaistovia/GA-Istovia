@@ -59,7 +59,7 @@ export function buildSheetRow(payload) {
  *
  * Example of the real implementation (uncomment & fill in when ready):
  *
- *   const SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/XXXXXXXX/exec";
+ *   const SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyPKsJHfil0RF8zM7FdVAcUUNgW8HWuzNc_cbzH9LxZlRL1Vxv_tOjx9bYc3lkjtzBJPw/exec";
  *   export async function submitToGoogleSheets(payload) {
  *     const res = await fetch(SHEETS_WEBHOOK_URL, {
  *       method: "POST",
